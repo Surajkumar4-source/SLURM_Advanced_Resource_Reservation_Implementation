@@ -70,7 +70,7 @@ MaxStartDelay=(null)
 
 
 ### Step 3: Write a Job Script: 
-  -Next, we will create a job script that runs on the reserved partition. This script prints numbers from 1 to 1000 with a sleep interval of 4 seconds between each print.
+  - Next, we will create a job script that runs on the reserved partition. This script prints numbers from 1 to 1000 with a sleep interval of 4 seconds between each print.
 
 ```yml
 root@controller:/home/dhpcsa/slurm-21.08.8/build# nano newscript.sh
@@ -119,7 +119,7 @@ dhpcsa@controller:/home/dhpcsa/slurm-21.08.8/build# squeue
 #Output : we can see job get resource  its running without error
 
 JOBID PARTITION NAME USER ST TIME NODES NODELIST(REASON)
-46 newpartition newscript dhpcsa R 0:02 1 compute1
+49 newpartition newscript dhpcsa R 0:02 1 compute1
 
 ```
 
@@ -168,10 +168,19 @@ JobID JobName Partition Account AllocCPUS State ExitCode
 50 newscript newpartition 1 PENDING 0:0
 
 ```
-
+  - We can see other user can't submit job , only dhpcsa (reserved) can submit job on compute1
 
 <br>
 
 
 
   **By following these steps, you can effectively manage reservations in Slurm, ensuring controlled access to resources for specific users and tasks.**
+
+
+
+
+
+
+
+
+  
