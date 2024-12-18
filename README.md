@@ -116,7 +116,7 @@ Submitted batch job 49
 
 dhpcsa@controller:/home/dhpcsa/slurm-21.08.8/build# squeue
 
-#Output : we can see job get resource  its running without error
+#Output : we can see job get resource ,its running without error
 
 JOBID PARTITION NAME USER ST TIME NODES NODELIST(REASON)
 49 newpartition newscript dhpcsa R 0:02 1 compute1
@@ -129,13 +129,13 @@ JOBID PARTITION NAME USER ST TIME NODES NODELIST(REASON)
 ```yml
 
 root@controller:~/slurm-21.08.8/build$ sbatch --reservation=suraj newscript.sh
-Submitted batch job 50
+Submitted batch job 48
 
 Output: 
 
 root@controller:/home/dhpcsa/slurm-21.08.8/build# squeue
 JOBID PARTITION NAME USER ST TIME NODES NODELIST(REASON)
-50 newpartition newscript dhpcsa PD 0:00 1 (ReqNodeNotAvail, May be reserved for other job)
+48 newpartition newscript dhpcsa PD 0:00 1 (ReqNodeNotAvail, May be reserved for other job)
 
 ```
 
@@ -164,8 +164,8 @@ dhpcsa@controller:~/slurm-21.08.8/build$ sacct
 JobID JobName Partition Account AllocCPUS State ExitCode
 ------------ ---------- ---------- ---------- ---------- ---------- --------
 49 newscript newpartition 1 RUNNING 0:0
-49.batch batch 1 RUNNING 0:0
-50 newscript newpartition 1 PENDING 0:0
+49.batch batch 1 RUNNING 0:0                                # second we test from dhpcsa
+48 newscript newpartition 1 PENDING 0:0                     # First  we test from root
 
 ```
   - We can see other user can't submit job , only dhpcsa (reserved) can submit job on compute1
@@ -178,7 +178,61 @@ JobID JobName Partition Account AllocCPUS State ExitCode
 
 
 
+<br>
 
+<br>
+
+<br>
+
+
+
+
+
+
+
+
+
+## ------------------Screnshots--------------------
+1.
+<br>
+<br>
+
+
+![Alt text for image](screenshots/1.png)
+
+2.
+<br>
+<br>
+
+
+![Alt text for image](screenshots/2.png)
+
+
+<br>
+<br>
+
+3.
+<br>
+<br>
+
+
+![Alt text for image](screenshots/3.png)
+
+4.
+<br>
+<br>
+
+
+
+
+
+![Alt text for image](screenshots/4.png)
+
+
+
+
+<br>
+<br>
 
 
 
